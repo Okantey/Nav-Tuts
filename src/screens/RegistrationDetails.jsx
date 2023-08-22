@@ -15,12 +15,12 @@ export default RegistrationDetails = ({ navigation }) => {
     {
       id: "yes",
       label: "Yes",
-      selected: true, // Initial state
+      selected: true,
     },
     {
       id: "no",
       label: "No",
-      selected: false, // Initial state
+      selected: false,
     },
   ];
 
@@ -70,7 +70,13 @@ export default RegistrationDetails = ({ navigation }) => {
           <TextInput className="border border-gray w-full p-4 rounded-xl text-base shadow" />
         </View>
         {/* prompt */}
-        <View style={{ flexDirection: "row", marginTop: 16 }}>
+        <Text
+          style={{ fontFamily: "Karla-Regular" }}
+          className="text-lg py-1 pt-4"
+        >
+          Are you the owner of the vehicle?
+        </Text>
+        <View style={{ flexDirection: "row", marginTop: 12 }}>
           {radioButtonsData.map((radioButton) => (
             <TouchableOpacity
               key={radioButton.id}
@@ -122,7 +128,7 @@ export default RegistrationDetails = ({ navigation }) => {
             </Text>
             <Text
               style={{ fontFamily: "Karla-Regular" }}
-              className="my-2 text-gray-400 text-lg text-center"
+              className="my-2 text-gray-500 text-lg text-center"
             >
               You need to upload a document that shows you're permitted to use
               this vehicle
@@ -131,7 +137,7 @@ export default RegistrationDetails = ({ navigation }) => {
               <AntDesign name="upload" size={26} color="orange" />
               <Text
                 style={{ fontFamily: "Karla-Medium" }}
-                className="text-lg ml-2"
+                className="text-xl ml-2"
               >
                 Upload Document
               </Text>
