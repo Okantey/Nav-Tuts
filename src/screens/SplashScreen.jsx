@@ -21,18 +21,22 @@ export default SplashScreen = () => {
         resizeMode="cover"
         resizeMethod="auto"
         className="flex-1 justify-center items-center h-screen mix-blend-color-burn "
+        style={{
+          width: "100dvw",
+          height: "100dvh",
+        }}
       >
         <Image source={vector} />
+        <View className="p-4">
+          <Text
+            style={{ fontFamily: "Syne-Bold" }}
+            className=" text-white text-3xl text-center"
+          >
+            TROSKI
+          </Text>
+        </View>
       </ImageBackground>
       <StatusBar style="auto" />
-      <View className="p-4">
-        <Text
-          style={{ fontFamily: "Syne-Bold" }}
-          className=" text-white text-3xl text-center"
-        >
-          TROSKI
-        </Text>
-      </View>
     </View>
   );
 };

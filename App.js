@@ -3,7 +3,26 @@ import { View, Text } from "react-native"
 import "react-native-gesture-handler";
 import "react-native-safe-area-context"
 import * as Font from 'expo-font';
-import Navigation from "./src/routes/Navigation";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails } from './src/screens';
+
+const Stack = createNativeStackNavigator();
+
+const StackGroup = () => {
+	return (
+		<Stack.Navigator screenOptions={{ headerShown: false }}>
+			<Stack.Screen name="SplashScreen" component={SplashScreen} />
+			<Stack.Screen name="GetStarted" component={GetStarted} />
+			<Stack.Screen name="Welcome" component={Welcome} />
+			<Stack.Screen name="VerifyRegistration" component={VerifyRegistration} />
+			<Stack.Screen name="RegistrationDetails" component={RegistrationDetails} />
+		</Stack.Navigator>
+	);
+};
+
+
+
 
 export default function App() {
 	const [fontsLoaded, setFontsLoaded] = useState(false)
@@ -28,9 +47,11 @@ export default function App() {
 	}, [])
 	return (
 		fontsLoaded ? (
-			<React.Fragment>
-				<Navigation />
-			</React.Fragment>
+
+			<NavigationContainer>
+				<StackGroup />
+			</NavigationContainer>
+
 		) : (
 			<View>
 				<Text>Loading..</Text>

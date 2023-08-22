@@ -1,3 +1,5 @@
 export { default as SplashScreen } from "./SplashScreen"
 export { default as GetStarted } from "./GetStarted"
 export { default as Welcome } from "./Welcome"
+export { default as RegistrationDetails } from "./RegistrationDetails"
+export { default as VerifyRegistration } from "./VerifyRegistration"
