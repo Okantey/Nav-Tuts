@@ -5,22 +5,50 @@ import "react-native-safe-area-context"
 import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails } from './src/screens';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent } from './src/screens';
 
 const Stack = createNativeStackNavigator();
-
-const StackGroup = () => {
+const BottomTab = createBottomTabNavigator()
+const StarterGroup = () => {
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
 			<Stack.Screen name="SplashScreen" component={SplashScreen} />
 			<Stack.Screen name="GetStarted" component={GetStarted} />
-			<Stack.Screen name="Welcome" component={Welcome} />
-			<Stack.Screen name="VerifyRegistration" component={VerifyRegistration} />
-			<Stack.Screen name="RegistrationDetails" component={RegistrationDetails} />
+			<Stack.Screen name="LoginGroup" component={LoginGroup} />
+			<Stack.Screen name="RegisterGroup" component={RegisterGroup} />
 		</Stack.Navigator>
 	);
 };
 
+const RegisterGroup = () => {
+	return (
+		<Stack.Navigator screenOptions={{ headerShown: false }}>
+			<Stack.Screen name="Welcome" component={Welcome} />
+			<Stack.Screen name="VerifyRegistration" component={VerifyRegistration} />
+			<Stack.Screen name="RegistrationDetails" component={RegistrationDetails} />
+			<Stack.Screen name="HomeGroup" component={HomeGroup} />
+		</Stack.Navigator>
+	)
+}
+
+const LoginGroup = () => {
+	return (
+		<Stack.Navigator initialRouteName="Login">
+			<Stack.Screen name="Login" component={Login} />
+			<Stack.Screen name="HomeGroup" component={HomeGroup} />
+		</Stack.Navigator >
+	)
+}
+
+const HomeGroup = () => {
+	return (
+		<BottomTab.Navigator>
+			<BottomTab.Screen name="Home" component={Home} />
+			<BottomTab.Screen name="Recent" component={Recent} />
+		</BottomTab.Navigator>
+	)
+}
 
 
 
@@ -49,7 +77,7 @@ export default function App() {
 		fontsLoaded ? (
 
 			<NavigationContainer>
-				<StackGroup />
+				<StarterGroup />
 			</NavigationContainer>
 
 		) : (

@@ -10,7 +10,7 @@ import {
 import { Troski, Button } from "../components";
 import { AntDesign } from "@expo/vector-icons";
 
-export default RegistrationDetails = () => {
+export default RegistrationDetails = ({ navigation }) => {
   const radioButtonsData = [
     {
       id: "yes",
@@ -141,7 +141,10 @@ export default RegistrationDetails = () => {
           ""
         )}
         <View className="my-6">
-          <Button name="CONTINUE" />
+          <Button
+            name="CONTINUE"
+            onPress={() => navigation.navigate("HomeGroup")}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
