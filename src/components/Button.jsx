@@ -1,12 +1,18 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { View, Text } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
-export default Button = () => {
+export default Button = ({ name, onPress }) => {
   return (
-    <View>
-      <StatusBar style="auto" />
-      <Text>Button</Text>
-    </View>
+    <TouchableOpacity
+      className="w-full bg-orange p-3 rounded-md"
+      onPress={onPress}
+    >
+      <Text
+        style={{ fontFamily: "Cabin-Bold" }}
+        className={`text-center  text-black text-xl `}
+      >
+        {name}
+      </Text>
+    </TouchableOpacity>
   );
 };
