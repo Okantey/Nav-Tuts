@@ -7,9 +7,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent, Account } from './src/screens';
-import { AntDesign } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator()
@@ -46,10 +45,10 @@ const LoginGroup = () => {
 
 const HomeGroup = () => {
 	return (
-		<BottomTab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
-			<BottomTab.Screen name="Home" component={Home} options={{ tabBarIcon: () => <AntDesign name="home" size={30} color="black" /> }} />
-			<BottomTab.Screen name="Recent" component={Recent} options={{ tabBarIcon: () => <MaterialIcons name="history" size={34} color="black" /> }} />
-			<BottomTab.Screen name="Account" component={Account} options={{ tabBarIcon: () => <Feather name="user" size={30} color="black" /> }} />
+		<BottomTab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false, tabBarActiveTintColor: "black", tabBarInactiveTintColor: "#e3e3e3" }}>
+			<BottomTab.Screen name="Home" component={Home} options={{ tabBarIcon: (props) => <Ionicons name="home" size={30} color={props.focused ? "black" : "gray"} /> }} />
+			<BottomTab.Screen name="Recent" component={Recent} options={{ tabBarIcon: (props) => <FontAwesome5 name="history" size={30} color={props.focused ? "black" : "gray"} /> }} />
+			<BottomTab.Screen name="Account" component={Account} options={{ tabBarIcon: (props) => <Ionicons name="person" size={30} color={props.focused ? "black" : "gray"} /> }} />
 		</BottomTab.Navigator>
 	)
 }

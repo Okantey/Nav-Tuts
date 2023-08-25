@@ -1,19 +1,10 @@
 import React from "react";
-import {
-  Text,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+import { Text, View, ImageBackground, StyleSheet } from "react-native";
 import started from "../../assets/images/started.png";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "../components";
 
 export default GetStarted = ({ navigation }) => {
-  const navigateToWelcome = () => {
-    navigation.navigate("Welcome");
-  };
   return (
     <View style={styles.container}>
       <ImageBackground

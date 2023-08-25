@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { View, Text, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import profile from "../../assets/images/profile.png";
-import bus from "../../assets/images/bus.jpg";
-import { Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { Button } from "../components";
 
 export default Home = () => {
@@ -26,7 +25,7 @@ export default Home = () => {
             </Text>
           </View>
         </View>
-        <Feather name="bell" size={34} color="black" />
+        <Ionicons name="notifications-outline" size={34} color="black" />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={{ fontFamily: "Syne-Bold" }} className="text-xl">
@@ -34,7 +33,9 @@ export default Home = () => {
         </Text>
         <View className="w-full">
           <Image
-            source={bus}
+            source={{
+              uri: "https://img.freepik.com/free-vector/vector-illustration-white-bus-realistic-style_1441-759.jpg?w=740&t=st=1692991770~exp=1692992370~hmac=e2e64acc18c5589f2e82ef2d3e382f219d948deb28cc42ab9df2e946c9360860",
+            }}
             className="w-full h-56 object-cover my-2 rounded-md"
           />
         </View>
@@ -89,7 +90,7 @@ export default Home = () => {
               <Text style={{ fontFamily: "Karla-Medium" }} className="text-lg">
                 -1.48%
               </Text>
-              <Feather name="arrow-down-left" size={30} color="black" />
+              <Ionicons name="trending-down" size={30} color="black" />
             </View>
           </View>
           {/* performance */}
