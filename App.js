@@ -6,7 +6,10 @@ import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent } from './src/screens';
+import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent, Account } from './src/screens';
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator()
@@ -43,9 +46,10 @@ const LoginGroup = () => {
 
 const HomeGroup = () => {
 	return (
-		<BottomTab.Navigator>
-			<BottomTab.Screen name="Home" component={Home} />
-			<BottomTab.Screen name="Recent" component={Recent} />
+		<BottomTab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
+			<BottomTab.Screen name="Home" component={Home} options={{ tabBarIcon: () => <AntDesign name="home" size={30} color="black" /> }} />
+			<BottomTab.Screen name="Recent" component={Recent} options={{ tabBarIcon: () => <MaterialIcons name="history" size={34} color="black" /> }} />
+			<BottomTab.Screen name="Account" component={Account} options={{ tabBarIcon: () => <Feather name="user" size={30} color="black" /> }} />
 		</BottomTab.Navigator>
 	)
 }
