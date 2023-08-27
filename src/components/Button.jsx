@@ -9,7 +9,7 @@ export default Button = ({ name, onPress }) => {
     >
       <Text
         style={{ fontFamily: "Cabin-Bold" }}
-        className={`text-center  text-white text-xl `}
+        className={`text-center  text-black text-xl `}
       >
         {name}
       </Text>

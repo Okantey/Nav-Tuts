@@ -21,7 +21,7 @@ export default Home = () => {
               style={{ fontFamily: "Syne-Bold" }}
               className="text-2xl text-orange"
             >
-              Amanda
+              Zuleiha
             </Text>
           </View>
         </View>

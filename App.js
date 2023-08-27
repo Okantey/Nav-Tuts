@@ -6,16 +6,18 @@ import * as Font from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent, Account } from './src/screens';
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { GetStarted, SplashScreen, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent, Account, Drawer } from './src/screens';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator()
+const Drawers = createDrawerNavigator();
 const StarterGroup = () => {
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
-			<Stack.Screen name="SplashScreen" component={SplashScreen} />
+			{/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> */}
 			<Stack.Screen name="GetStarted" component={GetStarted} />
 			<Stack.Screen name="LoginGroup" component={LoginGroup} />
 			<Stack.Screen name="RegisterGroup" component={RegisterGroup} />
@@ -53,6 +55,11 @@ const HomeGroup = () => {
 	)
 }
 
+const DrawerGroup = () => {
+	<Drawers.Navigator>
+		<Drawer.Screen name="Drawer" component={Drawer} />
+	</Drawers.Navigator>
+}
 
 
 export default function App() {
@@ -77,16 +84,12 @@ export default function App() {
 		loadFonts()
 	}, [])
 	return (
-		fontsLoaded ? (
+		fontsLoaded && (
 
 			<NavigationContainer>
 				<StarterGroup />
 			</NavigationContainer>
 
-		) : (
-			<View>
-				<Text>Loading..</Text>
-			</View>
 		)
 
 	);
