@@ -2,8 +2,10 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, TextInput } from "react-native";
 import { Troski, Button } from "../components";
+import { useNavigation } from "@react-navigation/native";
 
-export default VerifyRegistration = ({ navigation }) => {
+export default VerifyLogin = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView className="flex-1 px-4">
       <Troski />
@@ -21,10 +23,7 @@ export default VerifyRegistration = ({ navigation }) => {
         <TextInput className="flex-1 border border-gray-300 p-4 rounded-xl" />
       </View>
       <View className="mt-10">
-        <Button
-          name="CONTINUE"
-          onPress={() => navigation.navigate("RegistrationDetails")}
-        />
+        <Button name="CONTINUE" onPress={() => navigation.navigate("Tabs")} />
       </View>
       <View className="flex flex-row justify-between my-8">
         <View className="flex flex-row">

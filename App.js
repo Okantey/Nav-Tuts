@@ -3,6 +3,7 @@ import "react-native-gesture-handler";
 import "react-native-safe-area-context"
 import * as Font from 'expo-font';
 import MainNavigation from "./src/routes/MainNavigation";
+import { View } from "react-native-web";
 
 
 export default function App() {
@@ -27,11 +28,6 @@ export default function App() {
 		loadFonts()
 	}, [])
 	return (
-		fontsLoaded && (
-
-			<MainNavigation />
-
-		)
-
+		fontsLoaded && (<MainNavigation />)
 	);
 }

@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 export default Prompts = ({ title }) => {
   return (
     <View className="my-2">
-      <Text style={{ fontFamily: "Cabin-Bold" }} className="text-2xl">
+      <Text style={{ fontFamily: "Cabin-Bold" }} className="text-3xl">
         {title}
       </Text>
     </View>

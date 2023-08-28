@@ -85,7 +85,7 @@ export default Welcome = ({ navigation }) => {
             <Text
               style={{ fontFamily: "Cabin-Bold" }}
               className="underline text-orange text-lg"
-              onPress={() => navigation.navigate("Welcome")}
+              onPress={() => navigation.navigate("AuthStack")}
             >
               Sign in here
             </Text>

@@ -1,4 +1,4 @@
-import { GetStarted, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, Recent, Account, AddTrip } from './../screens';
+import { GetStarted, Welcome, VerifyRegistration, RegistrationDetails, Home, Login, VerifyLogin, Recent, Account, AddTrip, SplashScreen } from './../screens';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabsNavigation from './TabsNavigation';
 
@@ -17,6 +17,7 @@ const MainStack = () => {
 const StartUp = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="VerifyRegistration" component={VerifyRegistration} />
@@ -28,9 +29,9 @@ const StartUp = () => {
 
 const AuthStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Login'>
       <Stack.Screen name='Login' component={Login} />
-      <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
+      <Stack.Screen name="VerifyLogin" component={VerifyLogin} />
     </Stack.Navigator>
   )
 }

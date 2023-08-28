@@ -9,10 +9,10 @@ export default AddTrip = ({ navigation }) => {
   const [selectedLanguage, setSelectedLanguage] = useState();
 
   return (
-    <SafeAreaView className="flex-1 px-4 mt-6">
+    <SafeAreaView className="flex-1 px-4 mt-2">
       <TouchableOpacity
         className="flex-row items-center my-4"
-        onPress={() => navigation.navigate("Tabs")}
+        onPress={() => navigation.navigate("Home")}
       >
         <Ionicons name="chevron-back-outline" size={40} color="black" />
         <Text style={{ fontFamily: "Karla-Medium" }} className="text-2xl">

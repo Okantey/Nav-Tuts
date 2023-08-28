@@ -14,7 +14,7 @@ export default TabNavigation = () => {
       tabBarActiveTintColor: "#000",
       tabBarInactiveTintColor: "gray",
       tabBarStyle: { width: "90%", alignSelf: "center", borderRadius: 30, height: 70, paddingVertical: 5, marginVertical: 10, backgroundColor: "whitesmoke" }
-    }}>
+    }} >
       <Tab.Screen name="HomeTab" component={HomeStack}
         options={{ tabBarIcon: (props) => <Ionicons name="home" size={30} color={props.focused ? "#000" : "gray"} /> }} />
       <Tab.Screen name="RecentTab" component={RecentStack}
