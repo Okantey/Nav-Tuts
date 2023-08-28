@@ -16,7 +16,7 @@ export default GetStarted = ({ navigation }) => {
         <View style={styles.content}>
           <Button
             name="GET STARTED"
-            onPress={() => navigation.navigate("RegisterGroup")}
+            onPress={() => navigation.navigate("Welcome")}
           />
           <View style={styles.textContainer}>
             <Text
@@ -28,7 +28,7 @@ export default GetStarted = ({ navigation }) => {
             <Text
               style={{ fontFamily: "Cabin-Bold" }}
               className="underline text-orange text-lg"
-              onPress={() => navigation.navigate("LoginGroup")}
+              onPress={() => navigation.navigate("AuthStack")}
             >
               Sign in here
             </Text>

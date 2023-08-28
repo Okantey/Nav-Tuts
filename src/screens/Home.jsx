@@ -4,30 +4,49 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import profile from "../../assets/images/profile.png";
 import { Ionicons } from "@expo/vector-icons";
 import { Button } from "../components";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AddTrip from "./AddTrip";
+import { useNavigation } from "@react-navigation/native";
 
 export default Home = () => {
+  const navigation = useNavigation();
+  // details route
+
+  const Details = createNativeStackNavigator();
+
+  const DetailsGroup = () => {
+    return (
+      <NavigationContainer>
+        <Details.Navigator>
+          <Details.Screen name="AddTrip" component={AddTrip} />
+        </Details.Navigator>
+      </NavigationContainer>
+    );
+  };
   const [activeTrip, setActiveTrip] = useState(false);
   return (
     <SafeAreaView className="flex-1 px-4 mt-2 ">
-      <View className="flex flex-row justify-between items-center mb-4">
-        {/* logo and text container */}
-        <View className="flex flex-row items-center">
-          <Image source={profile} />
-          <View className="ml-3">
-            <Text style={{ fontFamily: "Karla-Medium" }} className="text-xl">
-              Good Morning
-            </Text>
-            <Text
-              style={{ fontFamily: "Syne-Bold" }}
-              className="text-2xl text-orange"
-            >
-              Zuleiha
-            </Text>
-          </View>
-        </View>
-        <Ionicons name="notifications-outline" size={34} color="black" />
-      </View>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <View className="flex flex-row justify-between items-center mb-4">
+          {/* logo and text container */}
+          <View className="flex flex-row items-center">
+            <Image source={profile} />
+            <View className="ml-3">
+              <Text style={{ fontFamily: "Karla-Medium" }} className="text-xl">
+                Good Morning
+              </Text>
+              <Text
+                style={{ fontFamily: "Syne-Bold" }}
+                className="text-2xl text-orange"
+              >
+                Zuleiha
+              </Text>
+            </View>
+          </View>
+          <Ionicons name="notifications-outline" size={34} color="black" />
+        </View>
+
         <Text style={{ fontFamily: "Syne-Bold" }} className="text-xl">
           Ongoing Trips
         </Text>
@@ -45,7 +64,10 @@ export default Home = () => {
         >
           You don't have any ongoing trips
         </Text>
-        <Button name="START NEW TRIP" />
+        <Button
+          name="START NEW TRIP"
+          onPress={() => navigation.navigate("AddTrip")}
+        />
         <Text style={{ fontFamily: "Syne-Bold" }} className="text-xl my-2">
           Statistics
         </Text>

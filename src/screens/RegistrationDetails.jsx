@@ -147,10 +147,7 @@ export default RegistrationDetails = ({ navigation }) => {
           ""
         )}
         <View className="my-6">
-          <Button
-            name="CONTINUE"
-            onPress={() => navigation.navigate("HomeGroup")}
-          />
+          <Button name="CONTINUE" onPress={() => navigation.navigate("Tabs")} />
         </View>
       </ScrollView>
     </SafeAreaView>

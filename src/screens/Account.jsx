@@ -114,7 +114,7 @@ export default Account = () => {
         >
           SignOut
         </Text>
-        <Text style={{ fontFamily: "Karla-Regular" }} className="text-lg">
+        <Text style={{ fontFamily: "Karla-Regular" }} className="text-md">
           zuleiha@mohammed.com
         </Text>
       </TouchableOpacity>
