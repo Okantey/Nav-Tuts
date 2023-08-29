@@ -8,7 +8,7 @@ export default VerifyRegistration = ({ navigation }) => {
     <SafeAreaView className="flex-1 px-4">
       <Troski />
       <Text className="text-2xl" style={{ fontFamily: "Cabin-Regular" }}>
-        Enter the 4-digit code sent to you on
+        Enter the 6-digit code sent to you on
       </Text>
       {/* OTP section */}
 
