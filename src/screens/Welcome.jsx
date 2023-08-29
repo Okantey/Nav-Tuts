@@ -27,7 +27,7 @@ export default Welcome = ({ navigation }) => {
                 First Name
               </Text>
               <TextInput
-                placeholder="Gideon"
+                placeholder="Zuleiha"
                 className="border border-gray w-full p-4 rounded-xl text-base shadow"
               />
             </View>
@@ -39,7 +39,7 @@ export default Welcome = ({ navigation }) => {
                 Other Names
               </Text>
               <TextInput
-                placeholder="Nana Kwame"
+                placeholder="Mohammed"
                 className="border border-gray w-full p-4 rounded-xl text-base shadow"
               />
             </View>
@@ -53,7 +53,7 @@ export default Welcome = ({ navigation }) => {
               Surname
             </Text>
             <TextInput
-              placeholder="Okantey"
+              placeholder="Mohammed"
               className="border border-gray w-full p-4 rounded-xl text-base shadow"
             />
           </View>
